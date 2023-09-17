@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Module Test | Stone Paper Scissors</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <div class="game_name">
+          Rock
+          <br />
+          Paper
+          <br />
+          Scissors
+        </div>
+        <div class="computer_score">
+          <p>
+            Computer
+            <br />
+            Score
+          </p>
+          <input readonly value="0" id="score_pc"></input>
+        </div>
+        <div class="your_score">
+          <p>
+            Your
+            <br />
+            Score
+          </p>
+          <input readonly value="0" id="score_user"></input>
+        </div>
+      </header>
+
+      <div class="play_area">
+        <div class="triangle">
+          <div class="right_line line"></div>
+          <div class="left_line line"></div>
+          <div class="straight_line line"></div>
+        </div>
+        <div class="choice_buttons">
+          <button
+            class="rock_border choice"
+            id="rock_position"
+            onclick="rock()"
+          >
+            <img src="./images resource/rock.png" width="67px" alt="rock" />
+          </button>
+
+          <button
+            class="paper_border choice"
+            id="paper_position"
+            onclick="paper()"
+          >
+            <img src="./images resource/paper.png" width="67px" alt="paper" />
+          </button>
+
+          <button
+            class="scissors_border choice"
+            id="scissors_position"
+            onclick="scissors()"
+          >
+            <img
+              src="./images resource/scissors.png"
+              width="35px"
+              alt="scissors"
+            />
+          </button>
+        </div>
+      </div>
+
+      <div class="play_result">
+        <div class="user_ring_1">
+          <div class="user_ring_2">
+            <div class="user_ring_3">
+              <p class="user-para">YOU PICKED</p>
+              <div class="user">
+                <img id="user_img" src="" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="middle">
+          <span class="hint_1"></span>
+          <p class="hint_2"></p>
+          <button class="play_again">PLAY AGAIN</button>
+        </div>
+
+        <div class="pc_ring_1">
+          <div class="pc_ring_2">
+            <div class="pc_ring_3">
+              <p class="pc-para">PC PICKED</p>
+              <div class="pc">
+                <img id="pc_img" src="" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="celebration">
+        <img src="./images resource/stars.png" alt="" id="stars" />
+        <img src="./images resource/trophy.png" alt="" id="trophy" />
+        <h2 class="hurray">HURRAY!!</h2>
+        <h3 class="won">YOU WON THE GAME</h3>
+        <button class="play_again_hurray" onclick="play_again_btn_hurray()">
+          PLAY AGAIN
+        </button>
+      </div>
+
+      <div class="buttons">
+        <button class="btn rules_btn" onclick="display_rules()">RULES</button>
+        <button
+          class="btn next_btn"
+          id="next_btn"
+          onclick="display_celebration()"
+        >
+          NEXT
+        </button>
+      </div>
+
+      <div class="game_rules">
+        <div class="hide" onclick="hide_rules()">
+          <div class="cross_1 one"></div>
+          <div class="cross_2 two"></div>
+        </div>
+        <h3>Game Rules</h3>
+        <ul class="rules_list">
+          <li>
+            <img src="./images resource/Rectangle.png" alt=" " />
+            Rock beats scissors, scissors beat paper, and paper beats rock.
+          </li>
+
+          <li>
+            <img src="./images resource/Rectangle.png" alt=" " />
+            Agree ahead of time whether you’ll count off “rock, paper, scissors,
+            shoot” or just “rock, paper, scissors.”
+          </li>
+          <li>
+            <img src="./images resource/Rectangle.png" alt=" " />
+            Use rock, paper, scissors to settle minor decisions or simply play
+            to pass the time
+          </li>
+          <li>
+            <img src="./images resource/Rectangle.png" alt=" " />
+            If both players lay down the same hand, each player lays down
+            another hand
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script src="./app.js"></script>
+  </body>
+</html>
