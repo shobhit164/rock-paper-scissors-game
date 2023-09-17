@@ -81,7 +81,12 @@ body {
 input {
   outline: none;
   border: none;
-  width: 25%;
+  width: 100%;
+  text-align: center;
+  border-bottom-left-radius: 9px;
+  border-bottom-right-radius: 9px;
+  position: relative;
+  bottom: 5px;
 }
 
 .play_area {
@@ -392,9 +397,9 @@ button > img:hover {
   display: none;
 } */
 
-/* #next_btn {
+#next_btn {
   display: none;
-} */
+}
 
 .celebration {
   position: absolute;
