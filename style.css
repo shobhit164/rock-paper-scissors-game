@@ -51,6 +51,7 @@ body {
   font-weight: 550;
   padding-left: 1rem;
   flex-grow: 1;
+  filter: drop-shadow(5px 2px 1px black);
 }
 
 .computer_score,
@@ -61,6 +62,7 @@ body {
   text-transform: uppercase;
   margin-right: 1rem;
   text-align: center;
+  filter: drop-shadow(3px 3px 3px black);
 }
 
 .computer_score > p,
@@ -362,8 +364,7 @@ button > img:hover {
   letter-spacing: 0.2rem;
 }
 
-.middle .play_again,
-.play_again_hurray {
+.middle .play_again, .play_again_hurray {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -380,8 +381,13 @@ button > img:hover {
   top: 1rem;
 }
 
-.user_ring_3 > p,
-.pc_ring_3 > p {
+.play_again:hover, .play_again_hurray:hover {
+  cursor: pointer;
+  border: 2px solid #fff;
+  filter: drop-shadow(5px 5px 3px black); ;
+}
+
+.user_ring_3 > p, .pc_ring_3 > p {
   color: #fff;
   position: relative;
   bottom: 1.5rem;
@@ -389,13 +395,6 @@ button > img:hover {
   font-weight: 500;
   letter-spacing: 0.12rem;
 }
-
-/* .header,
-.play_area,
-.play_result,
-.game_rules {
-  display: none;
-} */
 
 #next_btn {
   display: none;
@@ -453,7 +452,7 @@ button > img:hover {
 
 @keyframes slide {
   0% {
-    right: 0rem;
+    right: 2rem;
   }
   100% {
     right: 3rem;

@@ -12,6 +12,24 @@ function hide_rules() {
   rules.style.display = "none";
 }
 
+// Play Again button which takes us back to play area
+function play_again_btn(){
+    hide_user_rings();
+    hide_pc_rings();
+    let play_area = document.querySelector(".play_area");
+    let user = document.querySelector(".user");
+    let pc = document.querySelector(".pc")
+    let text1 = document.querySelector(".user-para");
+    let text2 = document.querySelector(".pc-para");
+    let middle = document.querySelector(".middle");
+    middle.style.visibility = "hidden";
+    play_area.style.display = "block";
+    user.style.visibility = "hidden";
+    pc.style.visibility = "hidden";
+    text1.style.visibility = "hidden";
+    text2.style.visibility = "hidden";
+}
+
 // Display only hurray page when click on Next button
 function display_celebration() {
   let header = document.querySelector(".header");
@@ -32,76 +50,39 @@ function display_celebration() {
   text1.style.visibility = "hidden";
   text2.style.visibility = "hidden";
   middle.style.visibility = "hidden";
-  hide_user_rings()
-
-}
-
-// Play Again button which takes us back to play area
-function play_again_btn(){
-hide_user_rings();
-hide_pc_rings();
-let play_area = document.querySelector(".play_area");
-let user = document.querySelector(".user");
-let pc = document.querySelector(".pc")
-let text1 = document.querySelector(".user-para");
-let text2 = document.querySelector(".pc-para");
-let middle = document.querySelector(".middle");
-middle.style.visibility = "hidden";
-play_area.style.display = "block";
-user.style.visibility = "hidden";
-pc.style.visibility = "hidden";
-text1.style.visibility = "hidden";
-text2.style.visibility = "hidden";
-
+  hide_user_rings();
 }
 
 function play_again_btn_hurray(){
  let header = document.querySelector(".header");
-    header.style.display = "flex";
-    let hurray = document.querySelector(".celebration");
-    hurray.style.display = "none";
-    let play_area = document.querySelector(".play_area");
-    play_area.style.display = "block";
-    let next_btn = document.querySelector("#next_btn");
-    next_btn.style.display = "none";
-    let play_result = document.querySelector(".play_result");
-    play_result.style.visibility = "hidden";
- 
-
-
+header.style.display = "flex";
+let hurray = document.querySelector(".celebration");
+hurray.style.display = "none";
+let play_area = document.querySelector(".play_area");
+play_area.style.display = "block";
+let next_btn = document.querySelector("#next_btn");
+next_btn.style.display = "none";
+let play_result = document.querySelector(".play_result");
+play_result.style.visibility = "hidden";
 }
 
-// // Display Computer Score
-// let pc_points = document.querySelector("#score_pc");
-// let local_storage_pc_value = localStorage.getItem("pc_points");
-// if (local_storage_pc_value == null) {
-//   localStorage.setItem("pc_points", 0);
-// } else {
-//   pc_points.value = local_storage_pc_value;
-// }
+// Display Computer Score
+let pc_points = document.querySelector("#score_pc");
+let local_storage_pc_value = localStorage.getItem("pc_points");
+if (local_storage_pc_value == null) {
+  localStorage.setItem("pc_points", 0);
+} else {
+  pc_points.value = local_storage_pc_value;
+}
 
-// // Display User Score
-// let user_points = document.querySelector("#score_user");
-// let local_storage_user_value = localStorage.getItem("user_points");
-// if (local_storage_user_value == null) {
-//   localStorage.setItem("user_points", 0);
-// } else {
-//   user_points.value = local_storage_user_value;
-// }
-
-// Get pc points
-// function get_pc_points(final_value) {
-//   localStorage.setItem("pc_points", final_value);
-//   let local_storage_value = localStorage.getItem("pc_points");
-//   pc_points.value = local_storage_value;
-// }
-
-// Get user points
-// function get_user_points(final_value) {
-//   localStorage.setItem("user_points", final_value);
-//   let local_storage_value = localStorage.getItem("user_points");
-//   user_points.value = local_storage_value;
-// }
+// Display User Score
+let user_points = document.querySelector("#score_user");
+let local_storage_user_value = localStorage.getItem("user_points");
+if (local_storage_user_value == null) {
+  localStorage.setItem("user_points", 0);
+} else {
+  user_points.value = local_storage_user_value;
+}
 
 // Get random choice
 function pick_random_choice() {
@@ -174,6 +155,7 @@ function show_pc_box() {
   pc_para.style.visibility = "visible";
 }
 
+// When result is tie
 function show_tieUp(user_border_color, user_image, pc_border_color, pc_image, hint_1, hint_2) {
   let user_btn = document.querySelector(".user");
   user_btn.style.border = `15px solid ${user_border_color}`;
@@ -188,9 +170,10 @@ function show_tieUp(user_border_color, user_image, pc_border_color, pc_image, hi
   let sub_heading = document.querySelector(".hint_2");
   sub_heading.innerHTML = `${hint_2}`;
   let middle = document.querySelector(".middle");
-middle.style.visibility = "visible";
+  middle.style.visibility = "visible";
 }
 
+// When pc wins 
 function pc_win(pc_border_color, pc_image, user_border_color, user_image, hint_1, hint_2) {
   let user_btn = document.querySelector(".user");
   user_btn.style.border = `15px solid ${user_border_color}`;
@@ -212,6 +195,7 @@ function pc_win(pc_border_color, pc_image, user_border_color, user_image, hint_1
   return 1;
 }
 
+// When user wins
 function user_win(user_border_color, user_image, pc_border_color, pc_image, hint_1, hint_2) {
   let user_btn = document.querySelector(".user");
   user_btn.style.border = `15px solid ${user_border_color}`;
@@ -233,7 +217,7 @@ function user_win(user_border_color, user_image, pc_border_color, pc_image, hint
   return 1;
 }
 
-// code for rock
+// Code for rock
 function rock() {
   hide_playArea_show_playResult(); 
   hide_user_rings();
@@ -245,20 +229,22 @@ function rock() {
     show_tieUp("#0074b6", "rock", "#0074b6", "rock", "TIE UP", " ");
   } else if (pcChoice == "paper") {
     let point = pc_win("#ffa943", "paper", "#0074b6", "rock", "YOU LOST", "AGAINST PC");
-    let pc_score = document.querySelector("#score_pc");
-    let final_value = parseInt(pc_score.value) + point;
-    console.log(final_value);
-    localStorage.setItem("pc-score", final_value);
+    let pc_points = document.querySelector("#score_pc");
+    let final_value = parseInt(pc_points.value) + point;
+    localStorage.setItem("pc_points", final_value);
+    let new_value = localStorage.getItem("pc_points");
+    pc_points.value = new_value;
   } else {
     let point = user_win("#0074b6", "rock", "#bd00ff", "scissors", "YOU WIN", "AGAINST PC");
-    let user_score = document.querySelector("#score_user");
-    let final_value = parseInt(user_score.value) + point;
-    console.log(final_value);
-    localStorage.setItem("user-score", final_value);
+    let user_points = document.querySelector("#score_user");
+    let final_value = parseInt(user_points.value) + point;
+    localStorage.setItem("user_points", final_value);
+    let new_value = localStorage.getItem("user_points");
+    user_points.value = new_value;
   }
 }
 
-// code for paper
+// Code for paper
 function paper() {
   hide_playArea_show_playResult();
   hide_user_rings();
@@ -269,13 +255,24 @@ function paper() {
   if (pcChoice == "paper") {
     show_tieUp("#ffa943", "paper", "#ffa943", "paper", "TIE UP", " ");
   } else if (pcChoice == "rock") {
-    user_win("#ffa943", "paper", "#0074b6", "rock", "YOU WIN", "AGAINST PC");
+    let point = user_win("#ffa943", "paper", "#0074b6", "rock", "YOU WIN", "AGAINST PC");
+    let user_points = document.querySelector("#score_user");
+    let final_value = parseInt(user_points.value) + point;
+    localStorage.setItem("user_points", final_value);
+    let new_value = localStorage.getItem("user_points");
+    user_points.value = new_value;
+    
   } else {
-    pc_win("#bd00ff", "scissors", "#ffa943", "paper", "YOU LOST", "AGAINST PC");
+    let point = pc_win("#bd00ff", "scissors", "#ffa943", "paper", "YOU LOST", "AGAINST PC");
+    let pc_points = document.querySelector("#score_pc");
+    let final_value = parseInt(pc_points.value) + point;
+    localStorage.setItem("pc_points", final_value);
+    let new_value = localStorage.getItem("pc_points");
+    pc_points.value = new_value;
   }
 }
 
-// code for scissors
+// Code for scissors
 function scissors() {
   hide_playArea_show_playResult();
   hide_user_rings();
@@ -286,8 +283,18 @@ function scissors() {
   if (pcChoice == "scissors") {
     show_tieUp("#bd00ff", "scissors", "#bd00ff", "scissors", "TIE UP", " ");
   } else if (pcChoice == "rock") {
-    pc_win("#0074b6", "rock", "#bd00ff", "scissors", "YOU LOST", "AGAINST PC");
+    let point = pc_win("#0074b6", "rock", "#bd00ff", "scissors", "YOU LOST", "AGAINST PC");
+    let pc_points = document.querySelector("#score_pc");
+    let final_value = parseInt(pc_points.value) + point;
+    localStorage.setItem("pc_points", final_value);
+    let new_value = localStorage.getItem("pc_points");
+    pc_points.value = new_value;
   } else {
-    user_win("#bd00ff", "scissors", "#ffa943", "paper", "YOU WIN", "AGAINST PC");
+    let point = user_win("#bd00ff", "scissors", "#ffa943", "paper", "YOU WIN", "AGAINST PC");
+    let user_points = document.querySelector("#score_user");
+    let final_value = parseInt(user_points.value) + point;
+    localStorage.setItem("user_points", final_value);
+    let new_value = localStorage.getItem("user_points");
+    user_points.value = new_value;
   }
 }
