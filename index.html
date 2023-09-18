@@ -3,37 +3,42 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Module Test | Stone Paper Scissors</title>
-    <link rel="stylesheet" href="./style.css" />
+    <title>Stone Paper Scissors</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="shortcut icon" href="./images resource/favicon.jpg" type="image/x-icon">
+    <script src="./app.js" defer></script>
   </head>
   <body>
     <div class="wrapper">
+      <!-- Header Section -->
       <header class="header">
         <div class="game_name">
-          Rock
-          <br />
-          Paper
-          <br />
-          Scissors
+          Rock <br/> Paper <br/> Scissors
         </div>
+
         <div class="computer_score">
           <p> Computer <br/> Score </p>
           <input readonly value="0" id="score_pc"></input>
         </div>
+
         <div class="your_score"> 
           <p> Your <br/> Score </p>
           <input readonly value="0" id="score_user"></input>
         </div>
       </header>
 
+      <!-- Play Area Section -->
       <div class="play_area">
+
         <div class="triangle">
           <div class="right_line line"></div>
           <div class="left_line line"></div>
           <div class="straight_line line"></div>
         </div>
+
         <div class="choice_buttons">
+
           <button class="rock_border choice" id="rock_position" onclick="rock()" >
             <img src="./images resource/rock.png" width="67px" alt="rock" />
           </button>
@@ -45,9 +50,12 @@
           <button class="scissors_border choice" id="scissors_position" onclick="scissors()" >
             <img src="./images resource/scissors.png" width="35px" alt="scissors" />
           </button>
+
         </div>
+        
       </div>
 
+      <!-- Play Result Section -->
       <div class="play_result">
         <div class="user_ring_1">
           <div class="user_ring_2">
@@ -78,6 +86,7 @@
         </div>
       </div>
 
+      <!-- Celebration/Hurray!! Section -->
       <div class="celebration">
         <img src="./images resource/stars.png" class="animate__animated animate__flash animate__infinite	infinite"  id="stars" />
         <img src="./images resource/trophy.png" id="trophy" />
@@ -86,11 +95,13 @@
         <button class="play_again_hurray" onclick="play_again_btn_hurray()"> PLAY AGAIN </button>
       </div>
 
+      <!-- Buttons Section -->
       <div class="buttons">
         <button class="btn rules_btn" onclick="display_rules()">RULES</button>
         <button class="btn next_btn" id="next_btn" onclick="display_celebration()"> NEXT </button>
       </div>
 
+      <!-- Game Rules Section -->
       <div class="game_rules">
         <div class="hide" onclick="hide_rules()">
           <div class="cross_1 one"></div>
@@ -98,28 +109,12 @@
         </div>
         <h3>Game Rules</h3>
         <ul class="rules_list">
-          <li>
-            <img src="./images resource/Rectangle.png" alt=" " />
-            Rock beats scissors, scissors beat paper, and paper beats rock.
-          </li>
-          <li>
-            <img src="./images resource/Rectangle.png" alt=" " />
-            Agree ahead of time whether you’ll count off “rock, paper, scissors,
-            shoot” or just “rock, paper, scissors.”
-          </li>
-          <li>
-            <img src="./images resource/Rectangle.png" alt=" " />
-            Use rock, paper, scissors to settle minor decisions or simply play
-            to pass the time
-          </li>
-          <li>
-            <img src="./images resource/Rectangle.png" alt=" " />
-            If both players lay down the same hand, each player lays down
-            another hand
-          </li>
+          <li>Rock beats scissors, scissors beat paper, and paper beats rock. </li>
+          <li>Agree ahead of time whether you’ll count off “rock, paper, scissors,shoot” or just “rock, paper, scissors.” </li>
+          <li>Use rock, paper, scissors to settle minor decisions or simply play to pass the time. </li>
+          <li>If both players lay down the same hand, each player lays down another hand. </li>
         </ul>
       </div>
     </div>
-    <script src="./app.js"></script>
   </body>
 </html>

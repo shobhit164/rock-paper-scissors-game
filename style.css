@@ -25,14 +25,15 @@ body {
   letter-spacing: 0.1rem;
 }
 
+/* Styles for the wrapper that contains the game */
 .wrapper {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 auto;
   height: 100vh;
-}
+} 
 
+/* Styles for the header section */
 .header {
   display: flex;
   align-items: center;
@@ -44,6 +45,7 @@ body {
   margin-top: 4rem;
 }
 
+/* Styles for the game name in the header */
 .game_name {
   text-transform: uppercase;
   color: #fff;
@@ -54,6 +56,7 @@ body {
   filter: drop-shadow(5px 1px 1px black);
 }
 
+/* Styles for the computer and user scores */
 .computer_score,
 .your_score {
   width: 8rem;
@@ -91,11 +94,13 @@ input {
   bottom: 5px;
 }
 
+/* Styles for the play area */
 .play_area {
   position: fixed;
   top: 50%;
 }
 
+/* Styles for the back lines in play area */
 .line {
   width: 300px;
   border: 6px solid rgba(0, 0, 0, 0.64);
@@ -115,6 +120,7 @@ input {
   transform: rotate(120deg);
 }
 
+/* Styles for the choice buttons */
 .choice {
   display: flex;
   align-items: center;
@@ -124,6 +130,7 @@ input {
   background-color: #ffff;
   border-radius: 50%;
   filter: drop-shadow(-1px 0 8px rgba(0, 0, 0, 0.35));
+  box-shadow: 3px 0px 21px 1px rgba(0, 0, 0, 0.20) inset;
 }
 
 .rock_border {
@@ -155,6 +162,16 @@ input {
   left: 14rem;
 }
 
+/* Styles for Rules & Next buttons */
+.buttons {
+  display: flex;
+  justify-items: center;
+  align-items: center;
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.5rem;
+}
+
 .btn {
   background: transparent;
   color: #fff;
@@ -171,18 +188,11 @@ input {
   cursor: pointer;
   background: #fff;
   color: #6b6b6b;
+  filter: drop-shadow(5px 5px 3px black);
 }
 
-.buttons {
-  display: flex;
-  justify-items: center;
-  align-items: center;
-  position: absolute;
-  right: 1.5rem;
-  bottom: 1.5rem;
-}
-
-button > img:hover {
+/* Styles for choice buttons on hover */
+.choice_buttons > button > img:hover {
   scale: 1.2;
 }
 
@@ -201,6 +211,7 @@ button > img:hover {
   filter: drop-shadow(0px 0px 15px var(--paper-circle));
 }
 
+/* Styles for the cross button that closes the rules portion of the game */
 .hide {
   position: relative;
   left: 14.7rem;
@@ -215,7 +226,8 @@ button > img:hover {
 
 .hide:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
+  filter: drop-shadow(0px 0px 4px red);
 }
 
 .cross_1 {
@@ -242,41 +254,50 @@ button > img:hover {
   rotate: -45deg;
 }
 
+/* Styles for the game rules section */
+.game_rules {
+  position: absolute;
+  right: 3rem;
+  bottom: 5.3rem;
+  border-radius: 13px;
+  border: 7px solid #fff;
+  background: var(--rules-bg);
+  max-width: 295px;
+  color: #fff;
+  padding: 1.4rem;
+  display: none;
+}
+
 .game_rules > h3 {
   color: #fff;
   margin-bottom: 1rem;
   font-size: 1.9rem;
   font-weight: 500;
   text-align: center;
-  margin-top: -3rem;
+  margin-top: -3.5rem;
 }
 
-.game_rules {
-  position: absolute;
-  right: 3rem;
-  bottom: 6rem;
-  border-radius: 13px;
-  border: 7px solid #fff;
-  background: var(--rules-bg);
-  width: 295px;
-  color: #fff;
-  padding: 1.4rem;
-  display: none;
+li::marker {
+  color: #FFD600;
+  font-size: 16px;
+}
+
+.rules_list {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding-left: 0.8rem;
 }
 
 .rules_list > li {
-  list-style: none;
-  font-size: 0.8rem;
-  letter-spacing: 0rem;
+  list-style-type: square;
+  font-size: 0.829rem;
+  letter-spacing: 0.002rem;
   font-weight: 400;
-  margin-bottom: 1rem;
-  text-align: justify;
 }
 
-.rules_list > li > img {
-  margin-right: 0.5rem;
-}
-
+/* Styles for the result section */
 .play_result {
   visibility: hidden;
   display: flex;
@@ -286,33 +307,46 @@ button > img:hover {
   margin: auto;
 }
 
-.user,
-.pc {
-  border-radius: 50%;
-  /* border: 15px solid #ffa943; */
-  background-color: #fff;
-  margin-bottom: 20px;
+.user, .pc {
   display: flex;
   align-items: center;
   justify-content: center;
-}
-
-.middle {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 3rem;
-  width: 224px;
-}
-
-.user,
-.pc {
+  filter: drop-shadow(6px 1px 5px #004429);
+  box-shadow: 3px 0px 21px 1px rgba(0, 0, 0, 0.20) inset;
+  border-radius: 50%;
+  background-color: #fff;
+  margin-bottom: 20px;
   height: 200px;
   width: 200px;
 }
 
-.user_ring_1,
-.pc_ring_1 {
+/* Styles for result which shows if you "lost" or "won" the game "Against PC" */
+.middle {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 -1rem;
+  width: 13.8rem;
+}
+
+.middle .hint_1 {
+  color: #fff;
+  text-align: center;
+  font-size: 2.4rem;
+  font-weight: 800;
+  letter-spacing: 0.3rem;
+}
+
+.middle .hint_2 {
+  color: #fff;
+  text-align: center;
+  font-size: 1.4rem;
+  font-weight: 800;
+  letter-spacing: 0.2rem;
+}
+
+/* Styles for the background rings/circle of user and PC */
+.user_ring_1, .pc_ring_1 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -323,8 +357,7 @@ button > img:hover {
   box-shadow: 0 2px 35px rgba(0, 0, 0, 0.13);
 }
 
-.user_ring_2,
-.pc_ring_2 {
+.user_ring_2, .pc_ring_2 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -335,8 +368,7 @@ button > img:hover {
   box-shadow: 0 1px -35px rgba(0, 0, 0, 0.13);
 }
 
-.user_ring_3,
-.pc_ring_3 {
+.user_ring_3, .pc_ring_3 {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -348,22 +380,16 @@ button > img:hover {
   box-shadow: 0 1px -35px rgba(0, 0, 0, 0.13);
 }
 
-.middle .hint_1 {
+.user_ring_3 > p, .pc_ring_3 > p {
   color: #fff;
-  text-align: center;
-  font-size: 2.5rem;
-  font-weight: 800;
-  letter-spacing: 0.3rem;
+  position: relative;
+  bottom: 1.5rem;
+  font-size: 1.3rem;
+  font-weight: 500;
+  letter-spacing: 0.12rem;
 }
 
-.middle .hint_2 {
-  color: #fff;
-  text-align: center;
-  font-size: 1.5rem;
-  font-weight: 800;
-  letter-spacing: 0.2rem;
-}
-
+/* Styles for play again buttons */
 .middle .play_again, .play_again_hurray {
   display: flex;
   justify-content: center;
@@ -371,7 +397,7 @@ button > img:hover {
   border-radius: 7px;
   background: #fff;
   color: #6b6b6b;
-  height: 2.6rem;
+  min-height: 2.6rem;
   width: 10rem;
   border: none;
   font-size: 1rem;
@@ -386,22 +412,20 @@ button > img:hover {
   border: 2px solid #fff;
   filter: drop-shadow(5px 5px 3px black);
   color: #004429;
-
 }
 
-.user_ring_3 > p, .pc_ring_3 > p {
-  color: #fff;
+/* Styles for the play again button in the celebration section */
+.play_again_hurray {
   position: relative;
-  bottom: 1.5rem;
-  font-size: 1.3rem;
-  font-weight: 500;
-  letter-spacing: 0.12rem;
+  top: -6rem;
+  font-size: 1rem;
 }
 
 #next_btn {
   display: none;
 }
 
+/* Styles for the Celebration/HURRAY!! section */
 .celebration {
   position: absolute;
   display: flex;
@@ -413,15 +437,7 @@ button > img:hover {
   display: none;
 }
 
-#trophy {
-  position: relative;
-  bottom: 12rem;
-}
-
-#stars {
-  width: 111%;
-}
-
+/* Styles for the "Hurray" text */
 .hurray {
   color: #fff;
   font-size: 6rem;
@@ -431,6 +447,7 @@ button > img:hover {
   bottom: 10rem;
 }
 
+/* Styles for the "You Won The Game" text */
 .won {
   color: #fff;
   font-size: 2.8rem;
@@ -440,18 +457,20 @@ button > img:hover {
   bottom: 9.2rem;
 }
 
-.play_again_hurray {
+
+#trophy {
   position: relative;
-  top: -6rem;
-  font-size: 1rem;
+  bottom: 12rem;
 }
 
+/* Media query for screens with a max width of 1024px */
 @media screen and (max-width: 1024px) {
   .header {
-    width: 70%;
+    width: 70%; /* Adjust header width for smaller screens */
   }
 }
 
+/* Keyframe animation for sliding */
 @keyframes slide {
   0% {
     right: 2rem;
