@@ -14,20 +14,34 @@ function hide_rules() {
 
 // Play Again button which takes us back to play area
 function play_again_btn(){
-    hide_user_rings();
-    hide_pc_rings();
-    let play_area = document.querySelector(".play_area");
-    let user = document.querySelector(".user");
-    let pc = document.querySelector(".pc")
-    let text1 = document.querySelector(".user-para");
-    let text2 = document.querySelector(".pc-para");
-    let middle = document.querySelector(".middle");
-    middle.style.visibility = "hidden";
-    play_area.style.display = "block";
-    user.style.visibility = "hidden";
-    pc.style.visibility = "hidden";
-    text1.style.visibility = "hidden";
-    text2.style.visibility = "hidden";
+  hide_user_rings();
+  hide_pc_rings();
+  let play_area = document.querySelector(".play_area");
+  let user = document.querySelector(".user");
+  let pc = document.querySelector(".pc")
+  let text1 = document.querySelector(".user-para");
+  let text2 = document.querySelector(".pc-para");
+  let middle = document.querySelector(".middle");
+  play_area.style.display = "block";
+  user.style.visibility = "hidden";
+  pc.style.visibility = "hidden";
+  text1.style.visibility = "hidden";
+  text2.style.visibility = "hidden";
+  middle.style.visibility = "hidden";
+}
+
+// When we arrive at the Hurray page after winning and want to play the game again.   
+function play_again_btn_hurray(){
+  let header = document.querySelector(".header");
+  header.style.display = "flex";
+  let hurray = document.querySelector(".celebration");
+  hurray.style.display = "none";
+  let play_area = document.querySelector(".play_area");
+  play_area.style.display = "block";
+  let next_btn = document.querySelector("#next_btn");
+  next_btn.style.display = "none";
+  let play_result = document.querySelector(".play_result");
+  play_result.style.visibility = "hidden";
 }
 
 // Display only hurray page when click on Next button
@@ -51,19 +65,6 @@ function display_celebration() {
   text2.style.visibility = "hidden";
   middle.style.visibility = "hidden";
   hide_user_rings();
-}
-
-function play_again_btn_hurray(){
- let header = document.querySelector(".header");
-header.style.display = "flex";
-let hurray = document.querySelector(".celebration");
-hurray.style.display = "none";
-let play_area = document.querySelector(".play_area");
-play_area.style.display = "block";
-let next_btn = document.querySelector("#next_btn");
-next_btn.style.display = "none";
-let play_result = document.querySelector(".play_result");
-play_result.style.visibility = "hidden";
 }
 
 // Display Computer Score

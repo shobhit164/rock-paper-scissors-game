@@ -6,6 +6,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: "Roboto";
 }
 
 /* Define root-level CSS variables for consistent theming */
@@ -21,7 +22,6 @@
 body {
   background: var(--main-bg);
   min-height: 100vh;
-  font-family: Roboto;
   letter-spacing: 0.1rem;
 }
 
@@ -51,7 +51,7 @@ body {
   font-weight: 550;
   padding-left: 1rem;
   flex-grow: 1;
-  filter: drop-shadow(5px 2px 1px black);
+  filter: drop-shadow(5px 1px 1px black);
 }
 
 .computer_score,
@@ -62,7 +62,7 @@ body {
   text-transform: uppercase;
   margin-right: 1rem;
   text-align: center;
-  filter: drop-shadow(3px 3px 3px black);
+  filter: drop-shadow(4px 4px 4px black);
 }
 
 .computer_score > p,
@@ -384,7 +384,9 @@ button > img:hover {
 .play_again:hover, .play_again_hurray:hover {
   cursor: pointer;
   border: 2px solid #fff;
-  filter: drop-shadow(5px 5px 3px black); ;
+  filter: drop-shadow(5px 5px 3px black);
+  color: #004429;
+
 }
 
 .user_ring_3 > p, .pc_ring_3 > p {

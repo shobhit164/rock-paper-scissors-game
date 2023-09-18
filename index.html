@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Module Test | Stone Paper Scissors</title>
     <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
   </head>
   <body>
     <div class="wrapper">
@@ -17,19 +18,11 @@
           Scissors
         </div>
         <div class="computer_score">
-          <p>
-            Computer
-            <br />
-            Score
-          </p>
+          <p> Computer <br/> Score </p>
           <input readonly value="0" id="score_pc"></input>
         </div>
-        <div class="your_score">
-          <p>
-            Your
-            <br />
-            Score
-          </p>
+        <div class="your_score"> 
+          <p> Your <br/> Score </p>
           <input readonly value="0" id="score_user"></input>
         </div>
       </header>
@@ -41,32 +34,16 @@
           <div class="straight_line line"></div>
         </div>
         <div class="choice_buttons">
-          <button
-            class="rock_border choice"
-            id="rock_position"
-            onclick="rock()"
-          >
+          <button class="rock_border choice" id="rock_position" onclick="rock()" >
             <img src="./images resource/rock.png" width="67px" alt="rock" />
           </button>
 
-          <button
-            class="paper_border choice"
-            id="paper_position"
-            onclick="paper()"
-          >
+          <button class="paper_border choice" id="paper_position" onclick="paper()" >
             <img src="./images resource/paper.png" width="67px" alt="paper" />
           </button>
 
-          <button
-            class="scissors_border choice"
-            id="scissors_position"
-            onclick="scissors()"
-          >
-            <img
-              src="./images resource/scissors.png"
-              width="35px"
-              alt="scissors"
-            />
+          <button class="scissors_border choice" id="scissors_position" onclick="scissors()" >
+            <img src="./images resource/scissors.png" width="35px" alt="scissors" />
           </button>
         </div>
       </div>
@@ -102,10 +79,10 @@
       </div>
 
       <div class="celebration">
-        <img src="./images resource/stars.png" alt="" id="stars" />
-        <img src="./images resource/trophy.png" alt="" id="trophy" />
-        <h2 class="hurray">HURRAY!!</h2>
-        <h3 class="won">YOU WON THE GAME</h3>
+        <img src="./images resource/stars.png" class="animate__animated animate__flash animate__infinite	infinite"  id="stars" />
+        <img src="./images resource/trophy.png" id="trophy" />
+        <h2 class="hurray animate__animated animate__pulse animate__infinite	infinite ">HURRAY!!</h2>
+        <h3 class="won animate__animated animate__fadeInUpBig">YOU WON THE GAME</h3>
         <button class="play_again_hurray" onclick="play_again_btn_hurray()"> PLAY AGAIN </button>
       </div>
 
@@ -125,7 +102,6 @@
             <img src="./images resource/Rectangle.png" alt=" " />
             Rock beats scissors, scissors beat paper, and paper beats rock.
           </li>
-
           <li>
             <img src="./images resource/Rectangle.png" alt=" " />
             Agree ahead of time whether you’ll count off “rock, paper, scissors,
