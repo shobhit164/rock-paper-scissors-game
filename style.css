@@ -325,8 +325,9 @@ li::marker {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 0 -1rem;
+  margin: 3rem -1rem 0rem -1rem;
   width: 13.8rem;
+  z-index: 1;
 }
 
 .middle .hint_1 {
@@ -409,16 +410,23 @@ li::marker {
 
 .play_again:hover, .play_again_hurray:hover {
   cursor: pointer;
-  border: 2px solid #fff;
   filter: drop-shadow(5px 5px 3px black);
   color: #004429;
 }
 
-/* Styles for the play again button in the celebration section */
+/* Styles for the play again button in the Celebration/HURRAY! section */
 .play_again_hurray {
   position: relative;
   top: -6rem;
   font-size: 1rem;
+  border: 2px solid transparent;
+  animation: border-pulse 2s ease-in-out infinite;
+}
+
+.play_again_hurray:hover {
+  border-image: linear-gradient(to right, #f00, #0f0, #00f);
+  border-image-slice: 1;
+  animation: none;
 }
 
 #next_btn {
@@ -478,4 +486,17 @@ li::marker {
   100% {
     right: 3rem;
   }
+}
+
+/* Keyframe animation for play button in hurray page */
+@keyframes  border-pulse {
+  0% {
+    border-color: #f00;
+  }
+  50% {
+    border-color: #bd00ff;
+ }
+  100% {
+    border-color: #00f;
+ }
 }
