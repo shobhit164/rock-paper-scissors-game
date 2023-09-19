@@ -266,6 +266,7 @@ input {
   color: #fff;
   padding: 1.4rem;
   display: none;
+  z-index: 2;
 }
 
 .game_rules > h3 {
