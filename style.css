@@ -336,6 +336,7 @@ li::marker {
   font-size: 2.4rem;
   font-weight: 800;
   letter-spacing: 0.3rem;
+  filter: drop-shadow(5px 1px 2px #004429);
 }
 
 .middle .hint_2 {
@@ -344,6 +345,7 @@ li::marker {
   font-size: 1.4rem;
   font-weight: 800;
   letter-spacing: 0.2rem;
+  filter: drop-shadow(1px 0px 2px red);
 }
 
 /* Styles for the background rings/circle of user and PC */
@@ -465,7 +467,6 @@ li::marker {
   bottom: 9.2rem;
 }
 
-
 #trophy {
   position: relative;
   bottom: 12rem;
@@ -474,7 +475,7 @@ li::marker {
 /* Media query for screens with a max width of 1024px */
 @media screen and (max-width: 1024px) {
   .header {
-    width: 70%; /* Adjust header width for smaller screens */
+    width: 70%; 
   }
 }
 
