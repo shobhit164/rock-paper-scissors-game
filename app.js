@@ -55,6 +55,8 @@ function display_celebration() {
   let text1 = document.querySelector(".user-para");
   let text2 = document.querySelector(".pc-para")
   let middle = document.querySelector(".middle");
+  let next_btn = document.querySelector("#next_btn");
+  next_btn.style.display = "none";
   hurray.style.display = "flex";
   header.style.display = "none";
   play_area.style.display = "none";
