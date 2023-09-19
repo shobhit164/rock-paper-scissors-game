@@ -19,28 +19,30 @@ function play_again_btn(){
   let play_area = document.querySelector(".play_area");
   let user = document.querySelector(".user");
   let pc = document.querySelector(".pc")
-  let text1 = document.querySelector(".user-para");
+  let text1 = document.querySelector(".user_para");
   let text2 = document.querySelector(".pc-para");
   let middle = document.querySelector(".middle");
+  let next_btn = document.querySelector("#next_btn");
   play_area.style.display = "block";
   user.style.visibility = "hidden";
   pc.style.visibility = "hidden";
   text1.style.visibility = "hidden";
   text2.style.visibility = "hidden";
   middle.style.visibility = "hidden";
+  next_btn.style.display = "none";
 }
 
 // When we arrive at the Hurray page after winning and want to play the game again.   
 function play_again_btn_hurray(){
   let header = document.querySelector(".header");
-  header.style.display = "flex";
   let hurray = document.querySelector(".celebration");
-  hurray.style.display = "none";
   let play_area = document.querySelector(".play_area");
-  play_area.style.display = "block";
   let next_btn = document.querySelector("#next_btn");
-  next_btn.style.display = "none";
   let play_result = document.querySelector(".play_result");
+  header.style.display = "flex";
+  hurray.style.display = "none";
+  play_area.style.display = "block";
+  next_btn.style.display = "none";
   play_result.style.visibility = "hidden";
 }
 
@@ -52,7 +54,7 @@ function display_celebration() {
   let play_result = document.querySelector(".play_result");
   let user = document.querySelector(".user");
   let pc = document.querySelector(".pc")
-  let text1 = document.querySelector(".user-para");
+  let text1 = document.querySelector(".user_para");
   let text2 = document.querySelector(".pc-para")
   let middle = document.querySelector(".middle");
   let next_btn = document.querySelector("#next_btn");
@@ -145,16 +147,16 @@ function hide_pc_rings() {
 // show user function
 function show_user_box() {
   let user = document.querySelector(".user");
+  let user_para = document.querySelector(".user_para");
   user.style.visibility = "visible";
-  let user_para = document.querySelector(".user-para");
   user_para.style.visibility = "visible";
 }
 
 // show pc function
 function show_pc_box() {
   let user = document.querySelector(".pc");
-  user.style.visibility = "visible";
   let pc_para = document.querySelector(".pc-para");
+  user.style.visibility = "visible";
   pc_para.style.visibility = "visible";
 }
 
