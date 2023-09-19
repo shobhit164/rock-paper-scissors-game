@@ -172,6 +172,8 @@ function show_tieUp(user_border_color, user_image, pc_border_color, pc_image, hi
   sub_heading.innerHTML = `${hint_2}`;
   let middle = document.querySelector(".middle");
   middle.style.visibility = "visible";
+  let replay = document.querySelector(".play_again");
+  replay.textContent = "REPLAY";
 }
 
 // When pc wins 
@@ -192,6 +194,8 @@ function pc_win(pc_border_color, pc_image, user_border_color, user_image, hint_1
   next_btn.style.display = "none";
   let middle = document.querySelector(".middle");
   middle.style.visibility = "visible";
+  let button_text = document.querySelector(".play_again");
+  button_text.textContent = "PLAY AGAIN";
   show_pc_rings();
   return 1;
 }
@@ -214,6 +218,8 @@ function user_win(user_border_color, user_image, pc_border_color, pc_image, hint
   next_btn.style.display = "block";
   let middle = document.querySelector(".middle");
   middle.style.visibility = "visible";
+  let button_text = document.querySelector(".play_again");
+  button_text.textContent = "PLAY AGAIN";
   show_user_rings();
   return 1;
 }
