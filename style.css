@@ -23,6 +23,7 @@ body {
   background: var(--main-bg);
   min-height: 100vh;
   letter-spacing: 0.1rem;
+  overflow: hidden;
 }
 
 /* Styles for the wrapper that contains the game */
@@ -592,17 +593,9 @@ li::marker {
   }
 
   .middle > .hint_1 {
-    font-size: 1.7rem;
-    width: 9rem;
-    letter-spacing: 0.1rem;
+    font-size: 2.3rem;
   }
-
-  .middle > .hint_2 {
-    font-size: 1.4rem;
-    margin-top: 6px;
-    letter-spacing: 0.1rem;
-  }
-
+  
   .middle .play_again {
     min-height: 1.8rem;
     width: 6.2rem;
