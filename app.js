@@ -163,11 +163,11 @@ function show_pc_box() {
 // When result is tie
 function show_tieUp(user_border_color, user_image, pc_border_color, pc_image, hint_1, hint_2) {
   let user_btn = document.querySelector(".user");
-  user_btn.style.border = `15px solid ${user_border_color}`;
+  user_btn.style.border = `13px solid ${user_border_color}`;
   let user_img = document.querySelector("#user_img");
   user_img.src = `images resource/${user_image}.png`;
   let pc_btn = document.querySelector(".pc");
-  pc_btn.style.border = `15px solid ${pc_border_color}`;
+  pc_btn.style.border = `13px solid ${pc_border_color}`;
   let pc_img = document.querySelector("#pc_img");
   pc_img.src = `images resource/${pc_image}.png`;
   let heading = document.querySelector(".hint_1");
@@ -183,11 +183,11 @@ function show_tieUp(user_border_color, user_image, pc_border_color, pc_image, hi
 // When pc wins 
 function pc_win(pc_border_color, pc_image, user_border_color, user_image, hint_1, hint_2) {
   let user_btn = document.querySelector(".user");
-  user_btn.style.border = `15px solid ${user_border_color}`;
+  user_btn.style.border = `13px solid ${user_border_color}`;
   let user_img = document.querySelector("#user_img");
   user_img.src = `images resource/${user_image}.png`;
   let pc_btn = document.querySelector(".pc");
-  pc_btn.style.border = `15px solid ${pc_border_color}`;
+  pc_btn.style.border = `13px solid ${pc_border_color}`;
   let pc_img = document.querySelector("#pc_img");
   pc_img.src = `images resource/${pc_image}.png`;
   let heading = document.querySelector(".hint_1");
@@ -207,11 +207,11 @@ function pc_win(pc_border_color, pc_image, user_border_color, user_image, hint_1
 // When user wins
 function user_win(user_border_color, user_image, pc_border_color, pc_image, hint_1, hint_2) {
   let user_btn = document.querySelector(".user");
-  user_btn.style.border = `15px solid ${user_border_color}`;
+  user_btn.style.border = `13px solid ${user_border_color}`;
   let user_img = document.querySelector("#user_img");
   user_img.src = `images resource/${user_image}.png`;
   let pc_btn = document.querySelector(".pc");
-  pc_btn.style.border = `15px solid ${pc_border_color}`;
+  pc_btn.style.border = `13px solid ${pc_border_color}`;
   let pc_img = document.querySelector("#pc_img");
   pc_img.src = `images resource/${pc_image}.png`;
   let heading = document.querySelector(".hint_1");
@@ -309,3 +309,5 @@ function scissors() {
     user_points.value = new_value;
   }
 }
+
+

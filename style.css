@@ -473,12 +473,6 @@ li::marker {
   bottom: 12rem;
 }
 
-/* Media query for screens with a max width of 1024px */
-@media screen and (max-width: 1024px) {
-  .header {
-    width: 70%; 
-  }
-}
 
 /* Keyframe animation for sliding */
 @keyframes slide {
@@ -497,8 +491,172 @@ li::marker {
   }
   50% {
     border-color: #bd00ff;
- }
+  }
   100% {
     border-color: #00f;
- }
+  }
+}
+
+/* Media query for screens with a max width of 1124px */
+@media screen and (max-width: 1124px) {
+  .header {
+    width: 70%; 
+  }
+}
+
+/* Media query for screens with a max width of 690px --> CODE FOR MOBILE SIZE (more suitable with iphones )  */
+@media screen and (max-width: 690px) {
+  body{
+    background-color: #5ea29c;
+  }
+
+  .game_name {
+    font-size: 1.3rem;
+    filter: drop-shadow(2px 0px 0px black);
+    padding-left: 0.5rem;
+    font-weight: 450;
+  }
+
+  .header {
+    width: 90vw;
+    height: 6rem;
+    position: fixed;
+    filter: drop-shadow(2px 2px 2px black);
+  }
+
+  #score_pc, #score_user {
+    font-size: 1.5rem;
+  }
+
+  .computer_score > p, .your_score > p {
+    font-size: 0.75rem;
+  }
+
+  .computer_score, .your_score {
+    width: 6rem;
+    margin-right: 0.6rem;
+    filter: invert(0);
+  }
+
+  .line {
+    width: 150px;
+  }
+
+  .right_line {
+    top: 6.1rem;
+    left: 2.7rem;
+  }
+
+  .left_line  {
+    top: 5.39rem;
+    left: -2.7rem;
+  }
+
+  .choice {
+    height: 6rem;
+    width: 6rem;
+  }
+
+  .rock_border {
+    border: 7px solid var(--rock-circle);
+  }
+
+  .paper_border {
+    border: 7px solid var(--paper-circle);
+  }
+
+  .scissors_border {
+    border: 7px solid var(--scissors-circle);
+  }
+
+  #rock_position {
+    bottom: 4rem;
+  }
+
+  #paper_position {
+    left: 1.6rem;
+    top: -0.5rem;
+  }
+
+  #scissors_position {
+    bottom: 16rem;
+    left: 7rem;
+  }
+
+  .middle {
+    margin: 0rem -6rem 0rem -6rem;
+    margin-top: 37vh;
+  }
+
+  .middle > .hint_1 {
+    font-size: 1.7rem;
+    width: 9rem;
+    letter-spacing: 0.1rem;
+  }
+
+  .middle > .hint_2 {
+    font-size: 1.4rem;
+    margin-top: 6px;
+    letter-spacing: 0.1rem;
+  }
+
+  .middle .play_again {
+    min-height: 1.8rem;
+    width: 6.2rem;
+    font-size: 0.7rem;
+  }
+
+  .user, .pc {
+    width: 91px;
+  }
+
+  .user_ring_3, .pc_ring_3 {
+    height: 130px;
+    width: 130px;
+    background-color: #285f5f;
+  }
+
+  .user_ring_2, .pc_ring_2 {
+    height: 160px;
+    width: 160px;
+    background-color: #3a7570;
+  }
+
+  .user_ring_1, .pc_ring_1 {
+    height: 175px;
+    width: 175px;
+    background-color: #4c8b81;
+  }
+
+  .user_ring_3 > p, .pc_ring_3 > p {
+    font-size: 1rem;
+  }
+
+  #user_img, #pc_img {
+    width: 30px;
+  }
+
+  .game_rules {
+    background: #285f5f ;
+  } 
+
+  .btn {
+    font-size: 0.9rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 6px;
+    margin-left: 1rem;
+  }
+
+  .hurray {
+    font-size: 3rem;
+  }
+
+  .won {
+    font-size: 1.7rem;
+  }
+
+  #stars {
+    width: 410px;
+  }
+
 }
