@@ -509,9 +509,6 @@ li::marker {
 @media screen and (max-width: 690px) {
   body{
     background-color: #5ea29c;
-    height: 100%;
-    overflow-y: hidden;
-    overflow-x: hidden;
   }
 
   .game_name {
